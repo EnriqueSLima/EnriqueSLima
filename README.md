@@ -4,7 +4,8 @@
 -  I’m looking to collaborate on projects to make difference in the world.
 -  Knowlegde is the most valuable thing to have and to share.
 
-From Jinjer - Perrenial - "From the ashes of my roots, a new me will rise and live again
+From Jinjer - Perrenial - "From the ashes of my roots, a new me will rise and live again".
+
 For the people who suffers with war, I wish an urgent end for that nightmare. 
 
 <!---
