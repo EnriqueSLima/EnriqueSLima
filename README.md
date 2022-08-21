@@ -20,8 +20,6 @@ You can click the Preview link to take a look at your changes.
 
 ![Enrique's GitHub stats](https://github-readme-stats.vercel.app/api?username=EnriqueSLima&show_icons=true&theme=dark)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=EnriqueSLima&theme=dark)](https://github.com/EnriqueSLima/github-readme-stats)
-
 Tecnologies:
 <div style="display: inline_block"> </br>
 <img  allign="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
