@@ -1,41 +1,109 @@
 #:kivy 1.0.9
 
-<FlyerLogin>:
+<FlyerSignUp>:
 
     canvas:
         Color:
-            rgba: .2, .2, .2, 2
-        Rectangle:
-            size: 400, 700
-            pos: 0, 0
+            rgb: (.2, 0.2, 1)
+        Ellipse:
+            pos: 450, 450
+            size: 80, 80
 
     Label:
-        text: "Usuário"
         font_size: 12
-        pos: 40, 250
+        text: "Seja bem vindo(a) ao Flyer,\nsuas informações estarão\nseguras e protegidas.\n"
+        pos: 600, 430
+
+    Label:
+        text: "Nome / Usuário"
+        font_size: 12
+        pos: 450, 360
 
     TextInput:
+        id: signup_name
         multiline: False
-        pos: 50, 250
+        pos: 450, 360
+        size: 300, 30
+    
+    Label:
+        text: "Email"
+        font_size: 12
+        pos: 440, 280
+
+    TextInput:
+        id: signup_mail
+        multiline: False
+        pos: 450, 280
+        size: 300, 30
+    
+    Label:
+        text: "Senha"
+        font_size: 12
+        pos: 440, 200
+
+    TextInput:
+        id: signup_pass
+        multiline: False
+        password: True
+        pos: 450, 200
+        size: 300, 30
+    
+    Button:
+        id: signup_btn0
+        text: "Cadastrar"
+        pos: 450, 100
+        size: 300, 30
+
+<FlyerLogin>:
+
+    canvas:
+        Ellipse:
+            pos: 150, 450
+            size: 100, 100
+           
+        Rectangle:
+            pos: 400, 0
+            size: 1, self.height
+
+    Label:
+        font_size: 30
+        text: "F/yer"
+        pos: 150, 350
+
+    Label:
+        text: "Email / Usuário"
+        font_size: 12
+        pos: 45, 320
+
+    TextInput:
+        id: user_mail
+        multiline: False
+        pos: 50, 320
         size: 300, 30
 
     Label:
         text: "Senha"
         font_size: 12
-        pos: 40, 150
+        pos: 40, 250
 
     TextInput:
+        id: user_pass
         multiline: False
         password: True
+        pos: 50, 250
+        size: 300, 30
+
+    Button:
+        id: check_btn
+        text: "Entrar"
         pos: 50, 150
         size: 300, 30
 
     Button:
-        text: "Entrar"
+        id: signup_btn
+        text: "Cadastrar"
         pos: 50, 100
         size: 300, 30
 
-    Button: 
-        text: "Cadastrar"
-        pos: 50, 50
-        size: 300, 30
+    FlyerSignUp:
+        pos: 0, 0
