@@ -1,0 +1,135 @@
+#:kivy 1.0.9
+
+<MyRootScreen>:
+    canvas:
+        Color:
+            rgb: (.150, .150, 1)
+        Rectangle:
+            pos: 0, 0
+            size: self.width, self.height
+
+    MyLogin:
+    MySignUp:
+
+# Inputs #
+
+<UserMail>:
+    id: user_mail
+    multiline: False
+    pos: 50, 320
+    size: 300, 30
+
+<UserPass>:
+    id: user_pass
+    multiline: False
+    password: True
+    pos: 50, 250
+    size: 300, 30
+
+<RegisterUser>:
+    id: register_user
+    multiline: False
+    pos: 450, 360
+    size: 300, 30
+
+<RegisterMail>:
+    id: register_mail
+    multiline: False
+    pos: 450, 280
+    size: 300, 30
+
+<RegisterPass>:
+    id: register_pass
+    multiline: False
+    password: True
+    pos: 450, 200
+    size: 300, 30
+
+# Buttons #
+
+<LogIn_Btn>:
+    id: login_btn
+    text: "* Log In *"
+    pos: 50, 150
+    size: 300, 30
+
+<Register_Btn>:
+    id: register_btn
+    text: "* Register *"
+    pos: 50, 100
+    size: 300, 30
+
+<SignUp_Btn>:
+    id: signup_btn
+    text: "* Sign Up *"
+    pos: 450, 100
+    size: 300, 30
+
+
+<MyLogin>:
+
+    canvas:
+        Color:
+            rgb: (.015, .015, .850)
+        Ellipse:
+            pos: 150, 450
+            size: 100, 100
+
+    Label:
+        font_size: 30
+        text: "MyApp"
+        pos: 150, 370
+
+    Label:
+        text: "Email / User"
+        font_size: 12
+        pos: 45, 320
+
+    Label:
+        text: "Password"
+        font_size: 12
+        pos: 40, 250
+
+    UserMail:
+    UserPass:
+    LogIn_Btn:
+    Register_Btn:
+
+<MySignUp>:
+
+    canvas:
+        Color:
+            rgb: (.015, .015, .850)
+        Ellipse:
+            pos: 450, 450
+            size: 80, 80
+
+    Label:
+        font_size: 13
+        text: "Welcome to MyApp"
+        pos: 600, 450
+    
+    Label:
+        font_size: 11
+        text: "\nYour info will be safe and protected."
+        pos: 600, 440
+
+    Label:
+        text: "User"
+        font_size: 12
+        pos: 440, 360
+
+    Label:
+        text: "Email"
+        font_size: 12
+        pos: 440, 280
+
+    Label:
+        text: "Password"
+        font_size: 12
+        pos: 440, 200
+
+    SignUp_Btn:
+    RegisterUser:
+    RegisterMail:
+    RegisterPass:
