@@ -1,66 +1,66 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.widget import Widget
-from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.core.window import Window
 from kivy.graphics import *
 
-# Inputs
+# App Window Options
+#Window.clearcolor = (1, 1, 1, 1)
+Window.clearcolor = (.0, .0, .0, 1)
+Window.size = (360, 640)
+
+# Inputs Declaration
 
 class UserMail(TextInput):
-    def __init__(self, **kwargs):
-        super(UserMail, self).__init__(**kwargs)
-
+    pass
 class UserPass(TextInput):
-    def __init__(self, **kwargs):
-        super(UserPass, self).__init__(**kwargs)
-
+    pass
 class RegisterUser(TextInput):
-    def __init__(self, **kwargs):
-        super(RegisterUser, self).__init__(**kwargs)
-
+    pass
 class RegisterMail(TextInput):
-    def __init__(self, **kwargs):
-        super(RegisterMail, self).__init__(**kwargs)
-
+    pass
 class RegisterPass(TextInput):
-    def __init__(self, **kwargs):
-        super(RegisterPass, self).__init__(**kwargs)
+    pass
+class ValidateMail(TextInput):
+    pass
 
-# Buttons
-
+# Buttons Declaration
 class LogIn_Btn(Button):
-    def on_press(self):
-        print("Log In button pressed")
-
+    pass
 class Register_Btn(Button):
-    def on_press(self):
-        print("Register button pressed")
-
+    pass
 class SignUp_Btn(Button):
-    def on_press(self):
-        print("Sign Up button pressed")
+    pass
+class Validate_Btn(Button):
+    pass
 
-# Sign Up window
-
-class MySignUp(Widget):
-
-    def __init__(self, **kwargs):
-        super(MySignUp, self).__init__(**kwargs)
-
-    def _login_btn(Button):
-        pass
-
-# Log In window
-
-class MyLogin(Widget):
-    def __init__(self, **kwargs):
-        super(MyLogin, self).__init__(**kwargs)
+# Log In screen
+class MyLogin(Screen):
+    pass
+# Register Screen
+class MySignUp(Screen):
+    pass
+# Validation Mail Screen
+class MyValidation(Screen):
+    pass
+# Root Layout
+class MyLayout(BoxLayout):
+    def build(self):
+        my_layout = BoxLayout()
+        self = my_layout
+        return my_layout
 
 # Root Screen
-class MyRootScreen(BoxLayout):
-    pass
+class MyRootScreen(Screen):
+    sm = ScreenManager()
+    sm.add_widget(MyLogin(name ='screen_login'))
+    sm.add_widget(MySignUp(name ='screen_signup'))
+    sm.add_widget(MySignUp(name ='screen_validation'))
+
+
 
 # Runs Application
 class MyApp(App):
