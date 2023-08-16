@@ -1,0 +1,164 @@
+#:kivy 1.0.9
+
+# Root Screen #       
+<MyRootScreen>:
+
+    # Box Layout Mobile 360x640 (px) #
+    MyLayout:
+    # Screens Inrerited #
+        ScreenManager:
+            MyLogin:
+            MySignUp:
+            MyValidation:
+
+# Layout Style
+<MyLayout>:
+    orientation: 'vertical'
+    padding: 50
+
+# Inputs Styles
+<UserMail>:
+    id: user_mail
+    multiline: False
+    size_hint: 1, .06
+    pos: 0, 330
+
+<UserPass>:
+    id: user_pass
+    multiline: False
+    password: True
+    size_hint: 1, .06
+    pos: 0, 250
+
+<RegisterUser>:
+    id: register_user
+    multiline: False
+    size_hint: 1, .06
+    pos: 0, 360
+
+<RegisterMail>:
+    id: register_mail
+    multiline: False
+    size_hint: 1, .06
+    pos: 0, 280
+
+<RegisterPass>:
+    id: register_pass
+    multiline: False
+    password: True
+    size_hint: 1, .06
+    pos: 0, 200
+
+<ValidateMail>:
+    id: validate_mail
+    multiline: False
+    size_hint: 1, .06
+    pos: 0, 250
+
+
+# Buttons Style
+<LogIn_Btn>: # Login Button go to Check Credentials
+    id: login_btn
+    text: "Log In"
+    size_hint: 1, .05
+    pos: 0, 150
+
+<Register_Btn>: # Register button go to Registration Screen
+    id: register_btn
+    text: "Register"
+    size_hint: 1, .05
+    pos: 0, 100
+
+<SignUp_Btn>: # Sign Up Button go to Validation Screen
+    id: signup_btn
+    text: "Sign Up"
+    size_hint: 1, .05
+    pos: 0, 100
+
+<Validate_Btn>: # Validation Button go to Login Screen
+    id: validate_btn
+    text: "Validate"
+    size_hint: 1, .05
+    pos: 0 , 150
+
+
+# Screens #
+<MyLogin>: # Screen for Logim
+    name: 'screen_login'
+    canvas:
+        Ellipse:
+            size: 80, 80
+            pos: 90, 450
+    Label:
+        text: 'My App'
+        font_size: 16
+        size_hint: 1, 1.6
+
+    Label:
+        text: 'User / Email'
+        size_hint: 1, 1.4
+        font_size: 12
+    Label:
+        text: 'Password'
+        size_hint: 1, 1.1
+        font_size: 12
+    # Inputs Inherited
+    UserMail:
+    UserPass:
+    # Buttons Behavior
+    LogIn_Btn:
+        on_press: root.manager.current = 'screen_login'
+    Register_Btn:
+        on_press: root.manager.current = 'screen_signup'
+
+<MySignUp>: # Screen for Sig Up / Register
+    name: 'screen_signup'
+    canvas:
+        Ellipse:
+            size: 80, 80
+            pos: 90, 450
+    Label:
+        text: 'My App'
+        font_size: 16
+        size_hint: 1, 1.6
+    Label:
+        text: 'User'
+        size_hint: 1, 1.5
+        font_size: 12
+    Label:
+        text: 'Email'
+        size_hint: 1, 1.2
+        font_size: 12
+    Label:
+        text: 'Password'
+        size_hint: 1, .9
+        font_size: 12
+    
+    # Inputs Inherited
+    RegisterUser:
+    RegisterMail:
+    RegisterPass:
+    # Buttons Behavior
+    SignUp_Btn:
+        on_press: root.manager.current = 'screen_validation'
+
+<MyValidation>: # Screen for validation of email
+    name: 'screen_validation'
+    canvas:
+        Ellipse:
+            size: 80, 80
+            pos: 90, 450
+    Label:
+        text: 'My App'
+        font_size: 16
+        size_hint: 1, 1.6
+    Label:
+        text: 'Verification Code'
+        size_hint: 1, 1.2
+        font_size: 12
+
+    # Inputs Inherited
+    ValidateMail:
+    # Buttons Behavior
+    Validate_Btn:
+        on_press: root.manager.current = 'screen_login'
