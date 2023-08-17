@@ -40,8 +40,6 @@ def resto_digito1():
 
     if resto_etapa1 >= 10:                                      #   Verifica se o 'resto_etapa1' é maior ou igual a 10
         resto_etapa1 = resto_etapa1%10
-    #elif resto_etapa1 < 10:
-    #    resto_etapa1 = resto_etapa1
     
     print('Resto da primeira divisão: ', resto_etapa1)          #   Imprime o valor da 'resto_etapa1' (OPCIONAL)
 
@@ -84,7 +82,7 @@ numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_c
 print('CPF sem pontuação: ', numerico_cpf)          #   Imprime o CPF sem pontuação para verificação (OPCIONAL)
 
 if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
-        print('CPF deve conter 11 digitos.')        #   Mensagem caso não possua 11 caracteres
+        print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres
 else:
     resto_etapa1 = resto_digito1()          #   Atribui o valor de retorno da função a 'resto_etapa1'
     resto_etapa2 = resto_digito2()          #   Atribui o valor de retorno da função a 'resto_etapa2'
