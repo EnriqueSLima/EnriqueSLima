@@ -25,20 +25,29 @@
 ###     Entrada de dados pelo usuário
 
 def valida_cpf():
-    numerico_cpf = ''
-    while(len(numerico_cpf) != 11):
-        entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
-        remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
 
-        #   Cria outra 'string' com valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
-        numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char})) 
-        if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
-            print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres
+    numerico_cpf = ''           #   Criando variáveis para analisar a entrada do usuário
+    numerico_cpf_inv = ''
+
+    while(len(numerico_cpf) != 11 or numerico_cpf_inv == numerico_cpf):
+
+        entrada_cpf = input('Digite o CPF:')                #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
+        remove_char = ['.', ',', '/', '-', ' ']             #   Define possíveis caracteres no CPF que não desejamos
+
+        #   Atribui a 'numerico_cpf' o valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
+        numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char}))
+        numerico_cpf_inv = numerico_cpf[::-1]           #   Cria uma string e inverte os valores dos indices de 'numerico_cpf'
+
+        if len(numerico_cpf) != 11:                     #   Verifica se o CPF sem a pontuação possui 11 caracteres
+            print('CPF deve conter 11 números.')
+        if numerico_cpf_inv == numerico_cpf:            #   Verifica se 'numerico_cpf' é igual a 'numerico_cpf_inv'
+            print('CPF não deve conter muitos digitos iguais consecutivos.')
+
+    #print('CPF sem pontuação: ', numerico_cpf)          #   Imprime CPF sem pontuação para verificação (OPCIONAL)
 
     somador_etapa1 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
     somador_etapa2 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
 
-    #   Criando looping de 'for' para iteração de multiplicação entre os índices
     for i in range(11):
         if i < 9:
             multiplicador_etapa1 = int(numerico_cpf[i]) * (int(i)+1)        #   Transforma o valor 'i' em inteiro e multiplica por 'i + 1'
@@ -57,6 +66,7 @@ def valida_cpf():
     if resto_etapa1 == int(numerico_cpf[-2]) and resto_etapa2 == int(numerico_cpf[-1]):      #   Verificando os digitos verificadores
         print('CPF válido.')
     else:
-        print('CPF inválido.')
+        print('CPF inválido.')                                     #   Caso não ocorra verificação correta dos digitos
 ###     Final da função
+
 valida_cpf()            #   Chamando a função
