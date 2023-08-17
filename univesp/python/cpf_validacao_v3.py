@@ -20,10 +20,12 @@
     5    Se o resto for igual ao segundo dígito verificador, e o resto da operação do passo 2 for igual ao primeiro digito verificador, o CPF é correto.
 
 """ 
+###     Este código possui diversas formas de ser feito, nessa versão usaremos uma função
+
+###     Entrada de dados pelo usuário
 
 def valida_cpf():
     numerico_cpf = ''
-    ### Entrada de dados pelo usuário
     while(len(numerico_cpf) != 11):
         entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
         remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
@@ -55,7 +57,6 @@ def valida_cpf():
     if resto_etapa1 == int(numerico_cpf[-2]) and resto_etapa2 == int(numerico_cpf[-1]):      #   Verificando os digitos verificadores
         print('CPF válido.')
     else:
-        print('CPF inválido.')  
-    return 0
-
-valida_cpf()
+        print('CPF inválido.')
+###     Final da função
+valida_cpf()            #   Chamando a função

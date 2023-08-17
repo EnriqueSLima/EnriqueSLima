@@ -37,11 +37,10 @@ def resto_digito1():
     #print('Resultado da primeira soma: ', somador_etapa1)               #   Imprime o valor da 'somador_etapa1' (OPCIONAL)
 
     resto_etapa1 = somador_etapa1 % 11                          #   Dividindo o valor de 'somador_etapa1' por 11 e atribuindo a 'resto_etapa1'
-
     if resto_etapa1 >= 10:                                      #   Verifica se o 'resto_etapa1' é maior ou igual a 10
         resto_etapa1 = resto_etapa1%10
     
-    print('Resto da primeira divisão: ', resto_etapa1)          #   Imprime o valor da 'resto_etapa1' (OPCIONAL)
+    #print('Resto da primeira divisão: ', resto_etapa1)          #   Imprime o valor da 'resto_etapa1' (OPCIONAL)
 
     return  resto_etapa1                                        #   Retorna o valor de 'resto_etapa_1'
 
@@ -57,11 +56,10 @@ def resto_digito2():
     #print('Resultado da segunda soma: ', somador_etapa2)                #   Imprime o valor da 'somador_etapa2' (OPCIONAL)
 
     resto_etapa2= somador_etapa2 % 11                           #   Dividindo o valor de 'somador_etapa2' por 11 e atribuindo a 'resto_etapa2'
-
     if resto_etapa2 >= 10:                                      #   Verifica se o 'resto_etapa2' é maior ou igual a 10
         resto_etapa2 = resto_etapa2%10
 
-    print('Resto da primeira divisão: ', resto_etapa2)          #   Imprime o valor da 'resto_etapa2' (OPCIONAL)
+    #print('Resto da primeira divisão: ', resto_etapa2)          #   Imprime o valor da 'resto_etapa2' (OPCIONAL)
     return resto_etapa2
 
 #   Função para validar os valores dos digitos verificadores
@@ -71,7 +69,7 @@ def valida_digito(resto_etapa1, resto_etapa2):
     else:
         print('CPF inválido.')                                     #   Caso não ocorra verificação correta dos digitos
 
-### Entrada de dados pelo usuário
+###     Entrada de dados pelo usuário
 
 numerico_cpf = ''
 
@@ -84,7 +82,7 @@ while(len(numerico_cpf) != 11):
     if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
         print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres   
 
-print('CPF sem pontuação: ', numerico_cpf)          #   Imprime o CPF sem pontuação para verificação (OPCIONAL)
+#print('CPF sem pontuação: ', numerico_cpf)          #   Imprime o CPF sem pontuação para verificação (OPCIONAL)
 
 if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
         print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres

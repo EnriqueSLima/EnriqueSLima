@@ -21,10 +21,12 @@
 
 """ 
 
-# Este código possui diversas formas de ser feito, nessa versão não usaremos funções
+###     Este código possui diversas formas de ser feito, nessa versão não usaremos funções
+
+###     Entrada de dados pelo usuário
 
 numerico_cpf = ''
-### Entrada de dados pelo usuário
+
 while(len(numerico_cpf) != 11):
     entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
     remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
@@ -33,8 +35,8 @@ while(len(numerico_cpf) != 11):
     numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char})) 
     if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
         print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres
-
-print('CPF sem pontuação: ', numerico_cpf)          #   Imprime CPF sem pontuação para verificação (OPCIONAL)
+            
+#print('CPF sem pontuação: ', numerico_cpf)          #   Imprime CPF sem pontuação para verificação (OPCIONAL)
 
 if len(numerico_cpf) == 11:                 #   Verifica se o CPF sem a pontuação possui 11 caracteres
     somador_etapa1 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
@@ -50,7 +52,7 @@ if len(numerico_cpf) == 11:                 #   Verifica se o CPF sem a pontuaç
     if resto_etapa1 >= 10:                                      #   Verifica se o 'resto_etapa1' é maior ou igual a 10
         resto_etapa1 = resto_etapa1%10
     
-    print('Resto da primeira divisão: ', resto_etapa1)          #   Imprime o valor da 'resto_etapa1' (OPCIONAL)
+    #print('Resto da primeira divisão: ', resto_etapa1)          #   Imprime o valor da 'resto_etapa1' (OPCIONAL)
 
     if resto_etapa1 == int(numerico_cpf[-2]):                   #   Verificando o primeiro digito verificador
 
@@ -68,9 +70,11 @@ if len(numerico_cpf) == 11:                 #   Verifica se o CPF sem a pontuaç
         if resto_etapa2 >= 10:                                      # Verifica se o resto é maior ou igual a 10
             resto_etapa2 = resto_etapa2%10
         
-        print('Resto da segunda divisão: ', resto_etapa2)          #   Imprime o valor da 'resto_etapa2' (OPCIONAL)
+        #print('Resto da segunda divisão: ', resto_etapa2)          #   Imprime o valor da 'resto_etapa2' (OPCIONAL)
 
         if resto_etapa2 == int(numerico_cpf[-1]):                   #   Verificando o segundo digito verificador
             print('CPF válido')
         else:                                                           #   Caso não ocorra verificação correta dos digitos
             print('CPF inválido')
+    else:                                                           #   Caso não ocorra verificação correta dos digitos
+        print('CPF inválido')
