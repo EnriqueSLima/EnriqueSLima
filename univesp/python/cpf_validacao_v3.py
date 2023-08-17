@@ -22,20 +22,22 @@
 """ 
 
 def valida_cpf():
-
+    numerico_cpf = ''
     ### Entrada de dados pelo usuário
+    while(len(numerico_cpf) != 11):
+        entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
+        remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
 
-    entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
-    remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
-
-    #   Cria outra 'string' com valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
-    numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char})) 
+        #   Cria outra 'string' com valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
+        numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char})) 
+        if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
+            print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres
 
     somador_etapa1 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
     somador_etapa2 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
 
     #   Criando looping de 'for' para iteração de multiplicação entre os índices
-    for i in range(11):                                                  #   Iteração até o elemento 10
+    for i in range(11):
         if i < 9:
             multiplicador_etapa1 = int(numerico_cpf[i]) * (int(i)+1)        #   Transforma o valor 'i' em inteiro e multiplica por 'i + 1'
             somador_etapa1 = multiplicador_etapa1 + somador_etapa1          #   Atribui o valor da multiplicação de forma recursiva na variável 'somador_etapa1'

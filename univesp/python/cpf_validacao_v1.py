@@ -23,17 +23,20 @@
 
 # Este código possui diversas formas de ser feito, nessa versão não usaremos funções
 
-entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
-remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
+numerico_cpf = ''
+### Entrada de dados pelo usuário
+while(len(numerico_cpf) != 11):
+    entrada_cpf = input('Digite o CPF:')        #   Pergunta ao usuário o número do CPF e atribui a variável 'entrada_cpf'.
+    remove_char = ['.', ',', ' ', '-']          #   Define possíveis caracteres no CPF que não desejamos
 
-#   Cria outra 'string' com valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
-numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char}))    
+    #   Cria outra 'string' com valor de 'entrada_cpf' e remove os caracteres definidos na lista 'remove_char'
+    numerico_cpf = entrada_cpf.translate(str.maketrans({ord(x): '' for x in remove_char})) 
+    if len(numerico_cpf) != 11:         #   Verifica se o CPF sem a pontuação possui 11 caracteres
+        print('CPF deve conter 11 números.')        #   Mensagem caso não possua 11 caracteres
 
 print('CPF sem pontuação: ', numerico_cpf)          #   Imprime CPF sem pontuação para verificação (OPCIONAL)
 
-if len(numerico_cpf) != 11:                 #   Verifica se o CPF sem a pontuação possui 11 caracteres
-        print('CPF deve conter 11 digitos.')             #   Mensagem de erro caso não possua 11 caracteres
-else:
+if len(numerico_cpf) == 11:                 #   Verifica se o CPF sem a pontuação possui 11 caracteres
     somador_etapa1 = 0              #   Criando uma variável inteira para representar a soma dos indices multiplicados
 
     #   Criando looping de 'for' para iteração de multiplicação entre os índices
@@ -69,5 +72,5 @@ else:
 
         if resto_etapa2 == int(numerico_cpf[-1]):                   #   Verificando o segundo digito verificador
             print('CPF válido')
-    else:                                                           #   Caso não ocorra verificação correta dos digitos
-        print('CPF inválido')
+        else:                                                           #   Caso não ocorra verificação correta dos digitos
+            print('CPF inválido')
