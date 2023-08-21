@@ -1,3 +1,5 @@
+/*      This is a code example from Univesp - COM-160 discipline      */
+
 #include <iostream>
 
 int main() {
