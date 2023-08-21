@@ -13,8 +13,12 @@ You can click the Preview link to take a look at your changes.
 <h2>Welcome to my profile. &#x270C </h2>
 <p> I’m @EnriqueSLima &#x1F918 a very curious person, maybe one of many points out of the line.</br>
     I want to colaborate and learning about tecnologies, coding projects and security systems.</br>
+<<<<<<< HEAD
     </br>Currently (re)learning C, Python and some frameworks.
     <img alt="Nazaré" src="https://c.tenor.com/YAOhbZ5GZy4AAAAd/nazar%C3%A9.gif" style="width: 50px"> </br>
+=======
+    </br>Currently (re)learning C, Python and some frameworks.</br>
+>>>>>>> refs/remotes/origin/main
     </br>It's amazing collaborate with projects to make difference in the world, help development itself.</br>
     Knowlegde is the most valuable thing!</br></br> Currently studing Data-Science and open to job oportunities.
  </p> </br>
