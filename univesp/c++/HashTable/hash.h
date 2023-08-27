@@ -12,6 +12,7 @@ class Hash {
   void retrieveItem(Student& student, bool& found);     //  Function to find a student
   void insertItem(Student student);                     //  Function ti insert item 
   void deleteItem(Student student);                     //  Function to delete items
+  void updateItem(Student student, int newSreg, std::string newName);
   void print();                                         //  Function to print items
  private:                           //  Private parameters  
   int getHash(Student student);     //  Function

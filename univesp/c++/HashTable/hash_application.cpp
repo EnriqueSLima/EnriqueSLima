@@ -20,6 +20,7 @@ int main(){
     "Carl", "Lucas", "Maria",
     "Samantha"};
     /*
+    WITH 'basic.cpp' and NOT WITH 'linear_probing.cpp'
     Note: Here some registers will be lost because of the number of hash items is 10.
     The gethash() function get the rest of division by 10, so the s_regs: 
     '12704' - 'Peter'
@@ -33,17 +34,28 @@ int main(){
     Student student = Student(s_regs[i], s_names[i]);     //  Inserting students names and registers 
     studentsHash.insertItem(student);
   }
+  cout << "Print Hash Table" <<  endl;
+  cout << "------------------------------" <<  endl;
+
   studentsHash.print();       //  Print results with collisions problems
   cout << "------------------------------" <<  endl;
   
   Student student(12704,"");      //  Attempting to find student register 'Peter'
   bool found = false;
   studentsHash.retrieveItem(student, found);
-  cout << student.getName() << "Student:  -> Found: " << found << endl;     //  Print result 'Peter' was not found because overwrited by Samantha
-  
+  cout << student.getName() << "Student:  -> Found: " << found << endl;     //  Print result 'Peter' was not found because overwrited by Samantha only with 'basic.cpp'
   cout << "------------------------------" <<  endl;
 
+  cout << "Deleting item" <<  endl;
+  cout << "------------------------------" <<  endl;
   studentsHash.deleteItem(student);     //  Deleting student, but will delete the overwrited value Samantha, because of collision
   studentsHash.print();
+  cout << "------------------------------" <<  endl;
+
+  //cout << "Updating item" <<  endl;
+  //cout << "------------------------------" <<  endl;
+  //studentsHash.updateItem(student, 25469, "Name updated");      //  Update student oly used with 'linear_probing.cpp'
+  //studentsHash.print();
+  //cout << "------------------------------" <<  endl;
   cout << "End" << endl;  
 }
