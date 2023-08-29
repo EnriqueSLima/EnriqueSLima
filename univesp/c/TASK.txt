@@ -1,0 +1,11 @@
+A partir da simulação realizada na terceira videoaula desta Semana 5 (videoaula 15), repita o particionamento fixo,
+
+com partições de tamanho fixo na memória e tente simular uma estratégia de particionamento fixo com tamanho variável de espaços de memória.
+
+Para simular partições com tamanho variáveis, você pode redefinir a estrutura (struct) partição da videoaula,
+
+incluindo um campo inteiro que indique o tamanho de cada partição. Outras ideias de solução são incentivadas. 
+
+Lembre-se de que os processos (ou jobs) podem ser estruturas (structs) que tem a instrução e o tamanho que necessita de espaço em uma partição de memória. 
+
+Desse modo, na alocação, será necessário alocar o menor espaço de memória (de partição) que caiba o processo. 
