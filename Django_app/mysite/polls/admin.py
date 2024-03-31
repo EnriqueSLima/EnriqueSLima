@@ -5,5 +5,3 @@ from .models import Choice
 
 
 admin.site.register(Question)
-admin.site.register(Choice)
-
